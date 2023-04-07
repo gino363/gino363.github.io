@@ -8,15 +8,24 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+    <style>
+        .container{
+            background-color:beige;
+            text-align: center;
+            
+            
+              }
+        
+    </style>
 
 <body>
-    <div ng-app="myShoppingList" ng-controller="myCtrl">
-        <ul>
+    <div class="container" ng-app="myShoppingList" ng-controller="myCtrl">
+        <ol>
             <li ng-repeat="x in products">
                 {{x}}
                 <span ng-click="removeitem($index)">&times;</span>
             </li>
-        </ul>
+        </ol>
         <input ng-model="addMe">
         <button ng-click="additem()">Add</button>
         <p>{{errortext}}</p>
