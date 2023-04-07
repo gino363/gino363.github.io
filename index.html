@@ -1,21 +1,51 @@
-<!doctype html>
-<html>
-  <head>
-    <title>web site</title>
-    <style>
-      h1{
-        color:green;
-      }
-      p{
-        color:blue;
-      }
-    </style>
-  </head>
-  <body>
-<h1>welcome page</h1>
-<p>gino new web site</p>
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>ANGULAR PROJECT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div ng-app="myShoppingList" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="x in products">
+                {{x}}
+                <span ng-click="removeitem($index)">&times;</span>
+            </li>
+        </ul>
+        <input ng-model="addMe">
+        <button ng-click="additem()">Add</button>
+        <p>{{errortext}}</p>
+    </div>
     <script>
-     
-    </script>
-  </body>
+          
+var app = angular.module('myShoppingList',[]);
+app.controller('myCtrl',function($scope) {
+ $scope.products =["milk","bread","cheese"];
+ $scope.additem = function(){
+ $scope.errortext = "";
+ if(!$scope.addMe) {return;}
+ if
+ ($scope.products.indexOf($scope.addMe)== -1)
+ {
+  $scope.products.push($scope.addMe);
+ }else{
+  $scope.errortext = "The item is already in your shopping list.";
+    }
+ }
+ $scope.removeitem = function(x){
+  $scope.products.splice(x,1);
+ }
+
+
+});
+    
+  
+  </script>
+</body>
+
 </html>
