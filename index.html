@@ -1,60 +1,260 @@
-
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="">
 <head>
-    <title>ANGULAR PROJECT</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-</head>
-    <style>
-        .container{
-            background-color:beige;
-            text-align: center;
-            
-            
-              }
-        
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blogs</title>
+       
+  <style>
+        #add{
+  	 	background-color:#404242;
+      	color: #f8f9f9;
+       	padding: 1px;
+       	border-radius: 4px;
+  	
+  }
+
+
+   #book-list{
+   	background-color: ;
+   }
+
+
+  h1 {
+      	text-align: center;
+      	color: black;
+      	font-family: arial;
+      	font-size: 2em;
+      	font-style: oblique;
+      	margin:60px auto;
+       	
+       	
+       }
+       
+       .delete{
+      	background-color:;
+      	color: red;
+       	padding:5px ;
+       	border-radius: 4px;
+       	-webkit-transition-duration: 1s;
+       	transition-duration:1s;
+       	float: !important;
+       	
+       }
+       
+       	
+     ul { 	
+           list-style-type: none;
+       }
+       
+       #wrapper{
+       	text-align: center;
+       	
+       }
+       
+       #add-book:after{
+       	content: ";
+       	display:block;
+       	clear: both;
+       }
+       
+       #add-book #hide{
+       	width: 30px;
+       }
+       
+       #add-book label{
+       	line-height: 52px;
+       }
+       
+       #add{
+       	background-color: black;
+       	color:red;
+       	padding: 5px;
+       	
+       	
+       }
+       
+       #add1{
+       	padding: 20px;
+       	width:500px;
+       	height: 10px;
+       	
+       }
+       
+       body{
+       	
+       	background-color:beige;
+       }
+      
     </style>
+        
+</head>
 
 <body>
-    <div class="container" ng-app="myShoppingList" ng-controller="myCtrl">
-        <ol>
-            <li ng-repeat="x in products">
-                {{x}}
-                <span ng-click="removeitem($index)">&times;</span>
-            </li>
-        </ol>
-        <input ng-model="addMe">
-        <button ng-click="additem()">Add</button>
-        <p>{{errortext}}</p>
-    </div>
-    <script>
-          
-var app = angular.module('myShoppingList',[]);
-app.controller('myCtrl',function($scope) {
- $scope.products =["milk","bread","cheese"];
- $scope.additem = function(){
- $scope.errortext = "";
- if(!$scope.addMe) {return;}
- if
- ($scope.products.indexOf($scope.addMe)== -1)
- {
-  $scope.products.push($scope.addMe);
- }else{
-  $scope.errortext = "The item is already in your shopping list.";
-    }
- }
- $scope.removeitem = function(x){
-  $scope.products.splice(x,1);
- }
+ 
+   <div id="wrapper">
+   	<header>
+   		<div id="page-banner">
+   			<h1 class="title">My BLOGS</h1>
+   			
+   			<form id="search-books">
+   		Search Blogs:<input type="text"placeholder="Search Blogs"/>
+   				
+   			</form>
+   		</div>
+   	</header>
+   	<div id="book-list">
+   		<h2 class="title">Blogs to Read</h2>
+   		<hr>
+   		<ul>
+   		 <li id="bob">
+   		   <span class="name"></span><br><br>
+   		   
+   		   
+   		   <span class="delete"></span><br><br>
+   		 	
+   		 </li>
+   		
+   		  <li id="bob" >
+   		   <span class="name">This my blog testing</span>
+   		   
+   		   <span class="delete"></span><br><br>
+   		 	
+   		 </li>
+   		  <li>
+   		   <span class="name"></span>
+   		   
+   		   
+   		   <span class="delete"></span><br><br>
+   		 	
+   		 </li>
+   		  <li>
+   		   <span class="name"></span>
+   		   
+   		   <span class="delete"></span><br><br>
+   		 	
+   		 </li>
+   			
+   			
+   		</ul>
+   		
+   	</div>
+   	<form id="add-book">
+   	 <input type="checkbox" id="hide"/>
+   	 <label for="hide">Hide all blogs</label>
+   		<input id="add1" type="text"placeholder="Add a blog..."/>
+   		<button id = "add">Add</button><br>
+   	</form>
+   </div>
+	
+	<script>
+		
+		"use strict";
 
+
+const list = document.querySelector('#book-list ul');
+
+
+
+// delete blogs
+
+list.addEventListener('click',function(e){
+ if(e.target.className == 'delete'){
+	const li = e.target.parentElement;
+	list.removeChild(li);
+	}
+});
+					
+// add blogs
+const addForm = document.forms['add-book'];
+addForm.addEventListener('submit',function(e){
+	e.preventDefault();
+	const value = addForm.querySelector('input[type="text"]').value;
+	
+	
+	// create elements
+	
+	const li = document.createElement('li');
+	const bookName = document.createElement('span');
+	const deleteBtn = document.createElement('span');
+	
+	// add content
+	
+	deleteBtn.textContent ='delete';
+	bookName.textContent = value;
+	
+	// add classes
+	bookName.classList.add('name');
+	deleteBtn.classList.add('delete');
+	
+	
+	// append to dom
+	li.appendChild(bookName);
+	li.appendChild(deleteBtn);
+	list.appendChild(li);
 
 });
-    
-  
-  </script>
-</body>
 
+
+
+// hide blogs
+
+   const hideBox = document.querySelector('#hide');
+   hideBox.addEventListener('change', function(e){
+   	if(hideBox.checked){
+   	  list.style.display = "none";
+		}else {
+			list.style.display = "initial";	
+   	}
+   });
+
+// filter blogs
+
+   const searchBar = document.forms['search-books'].querySelector('input');
+   searchBar.addEventListener('keyup', function(e){
+   	 const term = e.target.value.toLowerCase();
+   	 const books = list.getElementsByTagName('li');
+   	 Array.from(books).forEach(function(book){
+   	 	const title = book.firstElementChild.textContent;
+   	 	if(title.toLowerCase().indexOf(term)!= -1){
+   	 		book.style.display = 'block';
+		} else {
+   	 		book.style.display = 'none';
+   	 	}
+   	 })
+   	 
+	})
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+   
+
+	
+	
+</body>
 </html>
