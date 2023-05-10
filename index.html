@@ -1,496 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" A brief description,my new website with HTML,CSS,JavaScript,a Framework and More." />
-			      
-    <title>Gino's|Blog</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
 </head>
-	
-	<style>
-		
-		*,
-*::before,
-*::after,
-*:focus {
-    outline: none;
-}
-
-body {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    background:black ;
-    color: white;
-    font-family: "Oxygen", sans-serif;
-
-}
-#head{
-    font-family: cursive;
-
-}
-
-a {
-    text-decoration: none;
-
-
-
-}
-
-img {
-
-    width: 75%;
-}
-
-
-.home img {
-    margin-left: 110px;
-    text-align: center;
-    width: 100%;
-    -webkit-filter: grayscale(100%) contrast(100%);
-    filter: grayscale(100%) contrast(200%) brightness(60%);
-}
-
-.folio img {
-    filter: grayscale(100%);
-}
-
-aside {
-    position: fixed;
-    background: black;
-    top: 0px;
-    left: 0px;
-    width: 120px;
-    height: 100%;
-    overflow: none;
-    z-index: 1;
-    text-align: center;
-    padding: 0;
-}
-
-aside img {
-    filter: grayscale(100%)contrast(50%)brightness(100%);
-    margin-bottom: -3px;
-}
-
-.material-icons.md-36 {
-
-    font-size: 36px;
-}
-
-aside a {
-    display: block;
-    padding: 15px 0;
-    color: white;
-    transition: all 0.35s;
-    text-transform: uppercase;
-    font-size: 0.75em;
-    letter-spacing: 2px;
-}
-
-aside p {
-
-    margin: 0;
-    padding: 0;
-
-}
-
-aside a:hover {
-    background: #000;
-}
-
-aside nav a:nth-child(2) {
-    background: #000;
-}
-
-aside nav a:nth-child(2):hover {
-    background: #b2b2b2;
-    color: #222;
-}
-
-main {
-    max-width: 980px;
-    background: ;
-    margin-right: 20%;
-    padding: 12px 50px 12px 50px;
-}
-
-header {
-    text-align: center;
-    letter-spacing: 2px;
-}
-
-header h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 4em;
-    letter-spacing: 4px;
-
-}
-
-header h5 {
-
-    font-weight: 300;
-    font-size: 1em;
-    letter-spacing: 4px;
-    color:black ;
-
-}
-
-.nav {
-    align-items: center;
-}
-
-.about folio .contact {
-    line-height: 1.5em;
-    letter-spacing: 1px;
-    font-weight: 300;
-}
-
-.about h2,
-.folio h2,
-.contact h2 {
-    font-weight: 300;
-    text-transform: uppercase;
-    text-transform: line-through;
-    padding-bottom: 10px;
-    margin: 100px 0 0 0;
-    letter-spacing: 4px;
-}
-
-.folio {
-   margin-top: 100px;
-   background-color: ;
-
-}
-
-.folio h3 {
-    color: white;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
-
-.folio p {
-    font-size: 0.875em;
-
-}
-
-.row-halves {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-    -webkit-flex-pack: justify;
-}
-
-.row-halves .col {
-    width: 100%;
-
-}
-
-.col {
-    border: 1px solid #222;
-    background: ;
-    color: ;
-    padding: 10px;
-    width: 500px;
-}
-
-label {
-    color: white;
-}
-
-form input[type="text"],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border: 1px solid #222;
-    background: transparent;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    color: #b2b2b2;
-}
-
-form input[type="text"]:focus,
-textarea:focus {
-    outline: none;
-    border: 1px solid yellow;
-
-}
-
-input [type-="submit" ] {
-    background-color: transparent;
-    color: #b2b2b2;
-    text-transform: uppercase;
-    padding: 12px 20px;
-    border: 1px solid #222;
-    cursor: pointer;
-    transition: all 0.35s;
-
-}
-
-input[type="submit"] {
-    background-color: transparent;
-    color: #b2b2b2;
-    text-transform: uppercase;
-    padding: 12px 20px;
-    border: 1px solid #222;
-    cursor: pointer;
-    transition: all 0.35s;
-}
-
-input[type="submit"]:hover {
-    background-color: ;
-    color: #222;
-}
-
-.contact .container {
-    margin-top: 20px;
-    margin-bottom: 100px;
-    background: transparent;
-    padding: 20px 0;
-}
-
-.footer {
-    border-top: 1px solid #222;
-}
-
-.top-bar {
-    padding: 20px 0;
-    text-align: center;
-
-}
-
-.top-bar a {
-    margin: 10px;
-    font-size: 2em;
-    color: ;
-    transition: all 0.35s;
-    display: inline-block;
-}
-
-.top-bar a:hover {
-    transform: scale(1.1);
-    color: #009688;
-}
-
-.bottom-bar {
-    background: ;
-    font-size: 0.75em;
-    text-align: center;
-}
-
-@media (max-width: 601px) {
-    aside {
-        display: none;
-    }
-
-    main {
-        width: 100%;
-        margin: 0 auto;
-        padding: 12px;
-
-    }
-
-    header {
-        margin-top: 80px;
-
-    }
-
-    header h1 {
-        font-size: 3em;
-        line-height: 1.4em;
-    }
-
-    header h5 {
-        font-size: 1em;
-        letter-spacing: 2px;
-    }
-
-    .mobile-nav {
-        position: fixed;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        background: black;
-        
-        z-index: 1;
-    }
-
-    .mobile-nav a {
-        width: 100%;
-        background: yellowgreen ;
-        padding: 30px;
-        text-rendering:auto;
-
-    }
-
-}
-	
-	</style>
-	
-		
-	
-  <section  id="head">
-        <h2></h2>
-        <div class="row-halves">
-            <div class="col">
-            <h1>Gino Rusolo</h1>
-            <h2>Blog</h2>
-            </div>
-        </div>
-    </section>
-     
-
-<body>
-     
-      
-      
-    <aside>
-        <nav>
-            <img src="" alt="">
-            <a href="#home"><i class="material-icons md-36">home</i>
-                <p>Home</p>
-            </a>
-            
-            <a href="#contact"><i class="material-icons md-36">image</i>
-                <p>contact</p>
-            </a>
-            
-        </nav>
-    </aside>
-  
-    <main>
-        <header class="home" id="home">
-            <h1></h1>
-            <h5></h5>
-        </header>
-    </main>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="/w3images/avatar_smoke.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> John Doe.</h1>
+    <p>Photographer and Web Designer.</p>
+    <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">My Name</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <p class="w3-wide">Photography</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div><br>
     
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">11+</span><br>
+        Partners
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">89+</span><br>
+        Happy Clients
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
+      </div>
+    </div>
 
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">5GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
 
-        <div class="blogs content">
-            <h2>About Me</h2>
-            <p>
-                I'am a self taught developer i created this website i will add
-                more content as i progress.
-            </p>
-            <p>
-                I'am learning new tech in web developement its changeing all the
-                time something new comes along.
-            </p>
-            <p>
-                The tech I'am using node.js allows to run javascript on the
-                server all so ejs template which you can use npm just install
-                it.
-            </p>
-            <p>
-                There are other templates you can use Pug,
-                Handlebars,Mustache,Ejs and few a others.
-            </p>
-            <p>Also on the backend on this website i'am using Mongodb</p>
-            <p>
-                To be a full stack developer you need to know
-                html,css,javascript for the frontend.
-            </p>
-            <p>
-                For the backend you can use node which i'am using others are
-                python,php,etc.
-            </p>
-            <p>
-                I used other frameworks Django which is a python framework i
-                made a blog site on github.
-            </p>
-            <p>
-                Web developement is quite easy to set up i'am using a windows10
-                Laptop ive a choice of browsers to test my code on.
-            </p>
-            <p>
-                Google chrome which i use, its good for debuging, also i use
-                Firefox Mozilla which is good, i think there the two main ones.
-            </p>
-            <p>
-                Other Laptops i've have a macbook pro it's ok i got on Amazon
-                its a bit slow to boot up i need to up grade it.
-            </p>
-            <p>
-                All so i have Linux Laptop running on linux mint beats the other
-                two laptops.
-            </p>
-            <p>
-                Ok web development tools a code editor take your pick,
-                Vscode,Sublimetex,there are others, i use these two mainly.
-            </p>
-            <P
-                >A programming laungage javascript,python,php learn the basics
-                first then go to learn frameworks.
-            </P>
-            <p>
-                Ok frameworks lets see javascript
-                frameworks,Angular,React,Vue,Next.js,which i like.
-            </p>
-            <p>Python frameworks Django,Flask which i've used</p>
-            <p>
-                Php frameworks Laravel,Drupal,Codeignitor, Laravel i've used i
-                think thats the main one.
-            </p>
-        </div>
-        <div class="blogs content">
-            <h2>To sum up</h2>
-            <p>
-                I work as a flt/driver at a local firm for the past 23 years,
-                its ok steady income,iam 62 years old soon to retire in 4years.
-            </p>
-            <P
-                >Ok what will i do when i retire? good question deserves an
-                answer,I pondered what i like doing, learn a new skill.</P
-            >
-            <p>
-                So i started to lean programing, ok you think its a bit late to
-                learn at my age, Who going to employ me at my age.
-            </p>
-            <p>
-                OK nobody, so i'am learning as much has i can who knows i mite
-                get lucky!
-            </p>
-        </div>
-       
-    <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <div class="container">
-                  <a href="https://www.facebook.com"alt="facebook">@Facebook</a>
-                  <a href="https://www.twitter.com"alt="facebook">@Twitter</a>
-           
-    </section>
-    <footer>
-        <section class="top-bar">
-        
-        </section>
-        <section class="bottom-bar">
-            
-        </section>
-    </footer>
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+    
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>John Doe saved us from a web disaster.</p><br>
+    
+    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than John Doe.</p>
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
 
-      <section  id="footer">
-        <h2></h2>
-        <div class="row-halves">
-            <div class="col">
-                <h3>Business</h3>
-                <p>
-                    Building Resposive web-sites
-                </p>
-                 <p>&copy;2023 | All rights reserved</p>
-            </div>
-        </div>
-    </section>
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/rocks.jpg" style="width:100%">
+        <img src="/w3images/sailboat.jpg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="/w3images/underwater.jpg" style="width:100%">
+        <img src="/w3images/chef.jpg" style="width:100%">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/p6.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
 </body>
-
 </html>
+
